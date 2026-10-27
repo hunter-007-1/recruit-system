@@ -1,0 +1,38 @@
+#生产环境配置
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/recruit?useSSL=true&serverTimezone=UTC&characterEncoding=UTF8
+
+# 生产环境开启链功能
+chain:
+  changAn:
+    enabled: true
+    node-addr: ${CHAIN_NODE_ADDR:127.0.0.1:12301}
+    chain-id: ${CHAIN_ID:chain1}
+    org-id: ${CHAIN_ORG_ID:organization1}
+    user-cert-path: ${CHAIN_USER_CERT:}
+    user-key-path: ${CHAIN_USER_KEY:}
+    tls-cert-path: ${CHAIN_TLS_CERT:}
+    contract-name: recruit_contract
+    timeout: 30000
+    retry-times: 3
+
+# 关闭权限拦截（生产环境由网关控制）
+auth:
+  enabled: true
+
+request-log:
+  enabled: true
+
+logging:
+  level:
+    root: info
+    com.recruit: info
+    com.recruit.chain: info

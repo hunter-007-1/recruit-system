@@ -1,0 +1,35 @@
+#开发环境配置 - H2内存数据库（无需安装MySQL）
+
+server:
+  # 服务端口
+  port: 5000
+
+spring:
+  # 使用H2内存数据库
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:recruit;MODE=MySQL;DATABASE_TO_LOWER=TRUE;INIT=RUNSCRIPT FROM 'classpath:db/schema.sql' CHARSET 'UTF-8'
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# 开启权限拦截与令牌解析（必须开启，用于注入当前登录用户上下文）
+auth:
+  enabled: true
+
+# 关闭链功能（开发环境无链节点）
+chain:
+  changAn:
+    enabled: false
+
+# 开启http请求日志记录
+request-log:
+  enabled: false
+
+logging:
+  level:
+    web: debug
+    com.recruit: debug

@@ -1,0 +1,27 @@
+# Java / Maven
+recruit-sys/target/
+recruit-sys/logs/
+recruit-sys/lib/
+*.class
+*.jar
+
+# Node / Vue
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local runtime and generated files
+*.log
+recruit-sys/*args.txt
+recruit-sys/classpath.txt
+recruit-sys/cp*.txt
+recruit-sys/app_output.txt

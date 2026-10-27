@@ -1,0 +1,21 @@
+# 长安链连接配置
+chain:
+  changAn:
+    enabled: true
+    # 长安链节点 RPC 地址
+    node-addr: 127.0.0.1:12301
+    # 链ID
+    chain-id: chain1
+    # 组织ID
+    org-id: organization1
+    # 用户证书路径（部署时需替换为实际路径）
+    user-cert-path: /opt/chainmaker/crypto-config/wx-org1.chainmaker.org/user/client1/client1.sign.crt
+    user-key-path: /opt/chainmaker/crypto-config/wx-org1.chainmaker.org/user/client1/client1.sign.key
+    # TLS证书路径
+    tls-cert-path: /opt/chainmaker/crypto-config/wx-org1.chainmaker.org/ca.crt
+    # 智能合约名称
+    contract-name: recruit_contract
+    # 上链超时(ms)
+    timeout: 10000
+    # 异步重试次数
+    retry-times: 3
